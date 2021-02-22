@@ -114,7 +114,16 @@ def inspector():
     all_tables=all_check_constraints = inspector.get_table_names()
     print(all_tables)     
 
-insert()
+def query():
+    session=Session()
 
-inspector()
+    temp=session.query(Shelot).filter(Shelot.kod_shela == 1)
 
+    for sh in temp:
+        print(f'{sh}')
+
+# insert()
+
+# inspector()
+
+query()
